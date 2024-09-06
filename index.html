@@ -26,23 +26,18 @@ margin-left: 0;
 }
 
 .image {
-  height: 50vw;
-  position:fixed;
-  width: 99.9%;
-  top:2vw;
+  height: 60vh; /* Adjust height to maintain aspect ratio */
+  width: auto;
   background-color: white;
-  background-size: contain;
-  background-size: 100% 100%;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   mix-blend-mode: multiply;
   filter: blur(0px);
   opacity: 0;
   transition: filter 1s ease, opacity 1s ease;
-  transition-duration: 0s;
   border: 5px solid #0c5449;
 }
-
 .section.active .image {
   opacity: 1;
   filter: blur(0);
