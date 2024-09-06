@@ -21,7 +21,6 @@ margin-left: 0;
 .image-container {
   position: relative;
   display: flex;
-  top:3vw;
   height: 800px;
   width: 800px;
 }
@@ -123,7 +122,30 @@ a:visited {
   color: #ffc000;
   text-decoration: none;
 }
-  
+   @media only screen and (max-width: 1400px) {
+            .image-container {
+                width: 100%;
+                height: auto;
+                align-content: left;
+                border: none;
+            }
+
+            .image {
+                background-size: 100%;
+                height: auto;
+              top: 10vw;
+                border: inherit;
+            }
+
+            @media screen and (max-height: 600px) {
+                .image {
+                    background-size: 100% auto;
+                    height: 800px;
+                    top:5vw;
+                    border: inherit;
+                }
+            }
+        }
 </style>
 <body>
     <nav>
