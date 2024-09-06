@@ -206,21 +206,30 @@ a:visited {
 </div>
 
 <script>
-  window.onscroll = function() {
-    changeImage()
-  }
+  let isScrolling;
 
-  function changeImage() {
-    var scroll = window.scrollY + (window.innerHeight / 3);
-    [...document.getElementsByClassName('section')].forEach(el => {
-      el.classList.remove('active');
-      if (el.offsetTop <= scroll && el.offsetTop + el.offsetHeight > scroll) {
-        el.classList.add('active');
-      }
-    })
+window.addEventListener('scroll', function() {
+  if (!isScrolling) {
+    window.requestAnimationFrame(function() {
+      changeImage();
+      isScrolling = false;
+    });
   }
-  changeImage();
-</script>
-<script src="https://www.drv.tw/inc/wd.js?s=crcrjx5guewzuatspkobdg"></script></body>
+  isScrolling = true;
+});
+
+function changeImage() {
+  const scroll = window.scrollY + (window.innerHeight / 3);
+  [...document.getElementsByClassName('section')].forEach(el => {
+    el.classList.remove('active');
+    if (el.offsetTop <= scroll && el.offsetTop + el.offsetHeight > scroll) {
+      el.classList.add('active');
+    }
+  });
+}
+
+// Initial call
+changeImage();
+</script></body>
 
 </html>
