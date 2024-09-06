@@ -19,23 +19,27 @@ margin-left: 0;
 }
 
 .image-container {
+  position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
+  height: 800px;
+  width: 800px;
 }
 
 .image {
-  height: 60vh; /* Adjust height to maintain aspect ratio */
-  width: auto;
+  height: 50vw;
+  position:fixed;
+  width: 99.9%;
+  top:2vw;
   background-color: white;
-  background-size: cover;
+  background-size: contain;
+  background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
   mix-blend-mode: multiply;
   filter: blur(0px);
   opacity: 0;
   transition: filter 1s ease, opacity 1s ease;
+  transition-duration: 0s;
   border: 5px solid #0c5449;
 }
 
@@ -115,17 +119,13 @@ a:visited {
   color: #ffc000;
   text-decoration: none;
 }
-@media only screen and (max-width: 1400px) {
-  .image {
-    height: 50vh; /* Adjust height for smaller screens */
-  }
-}
+    @media only screen and (max-width: 1400px) {
+            
 
-@media only screen and (max-width: 600px) {
-  .image {
-    height: 40vh; /* Adjust height for very small screens */
-  }
-}
+            .image {
+               top:10%:
+    }}
+
           
 </style>
 <body>
@@ -211,5 +211,3 @@ function changeImage() {
 // Initial call
 changeImage();
 </script></body>
-
-</html>
