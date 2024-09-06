@@ -1,85 +1,38 @@
 <html>
 <style>
 body {
-margin-left: 0;
+  margin: 0;
   background-color: #00584d;
-  
-
-  
 }
 
-.section {
-  display: flex;
- min-height: 100vh;
-  position: relative;
-  z-index: 1;
-  
-  
-  
-}
-
-.image-container {
-  position: relative;
-  display: flex;
-  height: 800px;
-  width: 800px;
-}
-
-.image {
-  height: 60vh; /* Adjust height to maintain aspect ratio */
-  width: auto;
-  background-color: white;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  mix-blend-mode: multiply;
-  filter: blur(0px);
-  top: 4vh;
-  opacity: 0;
-  transition: filter 1s ease, opacity 1s ease;
-  border: 5px solid #0c5449;
-}
-.section.active .image {
-  opacity: 1;
-  filter: blur(0);
-  
-
-}
-
-.links {
-    margin-top: 300px;
-    margin-bottom: 300px;
-    font-size: 80px;
-    color: whitesmoke;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-align: center;
-}
 nav {
-    position: fixed;
-    text-align: center;
-  z-index:2;
-   top: 0;
-   width: 100%;
-   background-color: #0c5449;
+  position: fixed;
+  text-align: center;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+  background-color: #0c5449;
+  padding: 10px 0; /* Adjust if needed */
 }
+
 ul {
   list-style-type: none;
   overflow: hidden;
   margin: 0;
+  padding: 0;
 }
 
 li {
   float: left;
-  
 }
 
 li a {
   display: block;
   padding: 12px;
-
 }
+
 .button {
-  background-color :#0c5449; /* Green */
+  background-color: #0c5449; /* Green */
   border: none;
   color: #ffc000;
   padding: 3px 10px;
@@ -88,39 +41,86 @@ li a {
   display: inline-block;
   font-size: 16px;
   outline: none;
-
 }
 
 .button:hover {
   background-color: #ffc000;
   color: #0c5449;
 }
-.divider{
-    width:5vw;
-    height:auto;
-    display:inline-block;
-    background-color: #0c5449;
-}
-a {
-    text-decoration: none;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: larger;
-    color: #ffc000;
+
+.divider {
+  width: 5vw;
+  height: auto;
+  display: inline-block;
+  background-color: #0c5449;
 }
 
-a:hover,a:visited:hover {
+a {
+  text-decoration: none;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: larger;
+  color: #ffc000;
+}
+
+a:hover, a:visited:hover {
   color: #0c5449;
 }
+
 a:visited {
   color: #ffc000;
   text-decoration: none;
 }
-    @media only screen and (max-width: 1400px) {
-            
 
-            .image {
-               top:10%:
-    }}
+.section {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  padding-top: 60px; /* Adjust based on nav height */
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Ensure images fit */
+}
+
+.image {
+  max-height: 80vh; /* Adjust for visibility */
+  max-width: 100%;
+  background-color: white;
+  background-size: contain; /* Maintain aspect ratio */
+  background-position: center;
+  background-repeat: no-repeat;
+  mix-blend-mode: multiply;
+  filter: blur(0px);
+  opacity: 0;
+  transition: filter 1s ease, opacity 1s ease;
+  border: 5px solid #0c5449;
+}
+
+.section.active .image {
+  opacity: 1;
+  filter: blur(0);
+}
+
+/* Media Queries */
+@media only screen and (max-width: 1400px) {
+  .image {
+    max-height: 70vh; /* Adjust for smaller screens */
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .image {
+    max-height: 50vh; /* Further adjustment for very small screens */
+  }
+}
 
           
 </style>
